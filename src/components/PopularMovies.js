@@ -7,8 +7,8 @@ const PopularMovies = () => {
         <h1 className="text-white text-lg font-bold">Popular Movies</h1>
         <a className="text-gray-red hover:text-white text-light transition-all md:mr-6" href="#">More movies</a>
       </div>
-      <div className="whitespace-nowrap md:flex md:overflow-visible md:flex-wrap space-x-2 md:space-x-0 md:whitespace-pre-wrap w-full text-white max-h-25 overflow-x-scroll">
-        <div className="w-40 h-52 md:w-2/4 md:h-40 lg:h-64 mb-6 inline-block md:flex md:items-center overflow-hidden">
+      <div className="whitespace-nowrap pb-0 md:flex md:overflow-visible md:flex-wrap space-x-2 md:space-x-0 md:whitespace-pre-wrap w-full text-white max-h-25 overflow-x-scroll">
+        <div className="w-40 h-52 md:w-2/4 md:h-40 lg:h-64 md:mb-6 inline-block md:flex md:items-center overflow-hidden">
           <div className="rounded-xl relative overflow-hidden h-full w-full md:mr-6">
             <img src="https://upload.wikimedia.org/wikipedia/id/5/5c/Who_am_I_movie_poster.jpg" className="h-full w-full object-cover object-center" alt="" />
             <div className="flex absolute w-full bottom-0 left-0 bg-glass h-14 md:h-11 lg:h-16">
@@ -27,7 +27,7 @@ const PopularMovies = () => {
             </div>
           </div>
         </div>
-        <div className="w-40 h-52 md:w-2/4 md:h-40 lg:h-64 mb-6 inline-block md:flex md:items-center overflow-hidden">
+        <div className="w-40 h-52 md:w-2/4 md:h-40 lg:h-64 md:mb-6 inline-block md:flex md:items-center overflow-hidden">
           <div className="rounded-xl relative overflow-hidden h-full w-full md:mr-6">
             <img src="https://upload.wikimedia.org/wikipedia/id/1/12/Start-Up_2020.jpg" className="h-full w-full object-cover object-center" alt="" />
             <div className="flex absolute w-full bottom-0 left-0 bg-glass h-14 md:h-11 lg:h-16">
@@ -46,7 +46,7 @@ const PopularMovies = () => {
             </div>
           </div>
         </div>
-        <div className="w-40 h-52 md:w-2/4 md:h-40 lg:h-64 mb-6 inline-block md:flex md:items-center overflow-hidden">
+        <div className="w-40 h-52 md:w-2/4 md:h-40 lg:h-64 md:mb-6 inline-block md:flex md:items-center overflow-hidden">
           <div className="rounded-xl relative overflow-hidden h-full w-full md:mr-6">
             <img src="https://upload.wikimedia.org/wikipedia/id/1/13/Jumanji_Welcome_to_the_Jungle_Poster.jpg" className="h-full w-full object-cover object-center" alt="" />
             <div className="flex absolute w-full bottom-0 left-0 bg-glass h-14 md:h-11 lg:h-16">
@@ -65,7 +65,7 @@ const PopularMovies = () => {
             </div>
           </div>
         </div>
-        <div className="w-40 h-52 md:w-2/4 md:h-40 lg:h-64 mb-6 inline-block md:flex md:items-center overflow-hidden">
+        <div className="w-40 h-52 md:w-2/4 md:h-40 lg:h-64 md:mb-6 inline-block md:flex md:items-center overflow-hidden">
           <div className="rounded-xl relative overflow-hidden h-full w-full md:mr-6">
             <img src="https://cdn1-production-images-kly.akamaized.net/ByfoNPSMTMfPEtHmnQMFhgGP80Y=/640x853/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3635478/original/025116000_1637133546-253154135_2120128131476179_3401639978712735642_n.jpg" className="h-full w-full object-cover object-center" alt="" />
             <div className="flex absolute w-full bottom-0 left-0 bg-glass h-14 md:h-11 lg:h-16">

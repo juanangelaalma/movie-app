@@ -4,7 +4,7 @@ const Genres = () => {
   return (
     <div className="flex w-full flex-wrap">
       <h1 className="text-white text-lg font-bold">Genres</h1>
-      <div className="whitespace-nowrap md:whitespace-pre-wrap md:overflow-visible space-x-3 md:space-x-0 md:flex md:flex-wrap w-full pt-4 overflow-x-scroll">
+      <div className="whitespace-nowrap overflow-visible md:whitespace-pre-wrap md:overflow-visible space-x-3 md:space-x-0 md:flex md:flex-wrap w-full pt-4 overflow-x-scroll">
         <div className="md:pr-2 inline-block md:pb-2">
           <span className="bg-orange hover:bg-orange-hover px-2 py-1 rounded-xl inline-block">
             <p className="text-white md:text-md font-light">Romance</p>
