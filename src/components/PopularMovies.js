@@ -22,7 +22,7 @@ const PopularMovies = () => {
               </div>
               <div className="w-7/12 md:text-xxs lg:w-8/12 flex flex-col justify-center">
                 <h1 className="text-xs md:text-xxs lg:text-lg text-white">Aladin 2019</h1>
-                <h1 className="text-xs md:text-xxs lg:text-md font-light text-white">Dec 2019</h1>
+                <p className="text-xs md:text-xxs lg:text-md font-light text-white">Dec 2019</p>
               </div>
             </div>
           </div>
@@ -41,7 +41,7 @@ const PopularMovies = () => {
               </div>
               <div className="w-7/12 md:text-xxs lg:w-8/12 flex flex-col justify-center">
                 <h1 className="text-xs md:text-xxs lg:text-lg text-white">Aladin 2019</h1>
-                <h1 className="text-xs md:text-xxs lg:text-md font-light text-white">Dec 2019</h1>
+                <p className="text-xs md:text-xxs lg:text-md font-light text-white">Dec 2019</p>
               </div>
             </div>
           </div>
@@ -60,7 +60,7 @@ const PopularMovies = () => {
               </div>
               <div className="w-7/12 md:text-xxs lg:w-8/12 flex flex-col justify-center">
                 <h1 className="text-xs md:text-xxs lg:text-lg text-white">Aladin 2019</h1>
-                <h1 className="text-xs md:text-xxs lg:text-md font-light text-white">Dec 2019</h1>
+                <p className="text-xs md:text-xxs lg:text-md font-light text-white">Dec 2019</p>
               </div>
             </div>
           </div>
@@ -79,7 +79,7 @@ const PopularMovies = () => {
               </div>
               <div className="w-7/12 md:text-xxs lg:w-8/12 flex flex-col justify-center">
                 <h1 className="text-xs md:text-xxs lg:text-lg text-white">Aladin 2019</h1>
-                <h1 className="text-xs md:text-xxs lg:text-md font-light text-white">Dec 2019</h1>
+                <p className="text-xs md:text-xxs lg:text-md font-light text-white">Dec 2019</p>
               </div>
             </div>
           </div>
