@@ -18,7 +18,7 @@ const Navbar = () => {
           <h1 className="text-white text-3xl font-serif font-bold">MOVIES</h1>
         </Link>
         <div className="flex relative items-center md:order-2">
-          <button onClick={() => setIsOpenDropdownUser(!isOpenDropdownUser)} type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300">
+          <button onClick={() => setIsOpenDropdownUser(!isOpenDropdownUser)} type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-red">
             <span className="sr-only">Open user menu</span>
             <img className="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" alt="" />
           </button>
