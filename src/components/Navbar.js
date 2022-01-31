@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpenNavbar, setIsOpenNavbar] = useState(false)
@@ -13,9 +14,9 @@ const Navbar = () => {
           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
           <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
         </button>
-        <a href="" className="flex">
+        <Link to="/" className="flex">
           <h1 className="text-white text-3xl font-serif font-bold">MOVIES</h1>
-        </a>
+        </Link>
         <div className="flex relative items-center md:order-2">
           <button onClick={() => setIsOpenDropdownUser(!isOpenDropdownUser)} type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300">
             <span className="sr-only">Open user menu</span>
@@ -29,16 +30,16 @@ const Navbar = () => {
             </div>
             <ul className="py-1">
               <li>
-                <a href="" className="block py-2 px-4 text-sm text-gray-red hover:text-white">Dashboard</a>
+                <Link to="/user/dashboard" className="block py-2 px-4 text-sm text-gray-red hover:text-white">Dashboard</Link>
               </li>
               <li>
-                <a href="" className="block py-2 px-4 text-sm text-gray-red hover:text-white">Settings</a>
+                <Link to="/user/settings" className="block py-2 px-4 text-sm text-gray-red hover:text-white">Settings</Link>
               </li>
               <li>
-                <a href="" className="block py-2 px-4 text-sm text-gray-red hover:text-white">Earnings</a>
+                <Link to="/user/earnings" className="block py-2 px-4 text-sm text-gray-red hover:text-white">Earnings</Link>
               </li>
               <li>
-                <a href="" className="block py-2 px-4 text-sm text-gray-red hover:text-white">Sign out</a>
+                <Link to="/user/sign-out" className="block py-2 px-4 text-sm text-gray-red hover:text-white">Sign out</Link>
               </li>
             </ul>
           </div>
@@ -47,16 +48,16 @@ const Navbar = () => {
         <div className={`${ isOpenNavbar ? 'flex ' : 'hidden ' }justify-between w-80 h-screen md:h-auto md:flex md:w-auto md:order-1`} id="mobile-menu-2">
           <ul className="flex flex-col w-full mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium">
             <li className="p-2 md:border-b-2 border-orange">
-              <a href="" className="block py-0 pr-4 pl-3 text-white transition-all md:bg-transparent md:hover:text-white md:p-0" aria-current="page">Home</a>
+              <Link to="/" className="block py-0 pr-4 pl-3 text-white transition-all md:bg-transparent md:hover:text-white md:p-0" aria-current="page">Home</Link>
             </li>
             <li className="p-2">
-              <a href="" className="block py-0 pr-4 pl-3 text-gray-red transition-all md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0">Explore</a>
+              <Link to="/explore" className="block py-0 pr-4 pl-3 text-gray-red transition-all md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0">Explore</Link>
             </li>
             <li className="p-2">
-              <a href="" className="block py-0 pr-4 pl-3 text-gray-red transition-all md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0">Animation</a>
+              <Link to="/animation" className="block py-0 pr-4 pl-3 text-gray-red transition-all md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0">Animation</Link>
             </li>
             <li className="p-2">
-              <a href="" className="block py-0 pr-4 pl-3 text-gray-red transition-all md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0">Recomendation</a>
+              <Link to="/recommendation" className="block py-0 pr-4 pl-3 text-gray-red transition-all md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0">Recomendation</Link>
             </li>
           </ul>
         </div>
