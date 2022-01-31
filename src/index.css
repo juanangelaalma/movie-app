@@ -15,6 +15,10 @@
   background: #555;
 }
 
+nav ul li .active {
+  color: #FFFFFF;
+}
+
 .bg-glass {
   background: linear-gradient(90.63deg, rgba(255, 255, 255, 0.3) 1.78%, rgba(255, 255, 255, 0.1) 97.84%, rgba(255, 255, 255, 0.1) 97.84%);
   backdrop-filter: blur(30px);

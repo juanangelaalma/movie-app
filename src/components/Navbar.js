@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpenNavbar, setIsOpenNavbar] = useState(false)
   const [isOpenDropdownUser, setIsOpenDropdownUser] = useState(false)
+  const [active, setActive] = useState('home')
 
   return (
     <nav className="bg-black fixed top-0 left-0 z-10 w-full border-gray-200 px-2 sm:px-4 py-6">
@@ -30,7 +31,7 @@ const Navbar = () => {
             </div>
             <ul className="py-1">
               <li>
-                <Link to="/user/dashboard" className="block py-2 px-4 text-sm text-gray-red hover:text-white">Dashboard</Link>
+                <NavLink to="/user/dashboard" className="block py-2 px-4 text-sm text-gray-red hover:text-white">Dashboard</NavLink>
               </li>
               <li>
                 <Link to="/user/settings" className="block py-2 px-4 text-sm text-gray-red hover:text-white">Settings</Link>
@@ -47,17 +48,21 @@ const Navbar = () => {
         {/* Navbar Links */}
         <div className={`${ isOpenNavbar ? 'flex ' : 'hidden ' }justify-between w-80 h-screen md:h-auto md:flex md:w-auto md:order-1`} id="mobile-menu-2">
           <ul className="flex flex-col w-full mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium">
-            <li className="p-2 md:border-b-2 border-orange">
-              <Link to="/" className="block py-0 pr-4 pl-3 text-white transition-all md:bg-transparent md:hover:text-white md:p-0" aria-current="page">Home</Link>
+            <li className="p-2" onClick={() => isOpenNavbar && setIsOpenNavbar(false)}>
+              {/* NavLink will be add .action class when clicked */}
+              <NavLink exact="true" to="/" className="block py-0 pr-4 pl-3 text-gray-red transition-all md:bg-transparent md:hover:text-white md:p-0">Home</NavLink>
             </li>
-            <li className="p-2">
-              <Link to="/explore" className="block py-0 pr-4 pl-3 text-gray-red transition-all md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0">Explore</Link>
+            <li className="p-2" onClick={() => isOpenNavbar && setIsOpenNavbar(false)}>
+              {/* NavLink will be add .action class when clicked */}
+              <NavLink exact="true" to="/explore" className="block py-0 pr-4 pl-3 text-gray-red transition-all md:bg-transparent md:hover:text-white md:p-0">Explore</NavLink>
             </li>
-            <li className="p-2">
-              <Link to="/animation" className="block py-0 pr-4 pl-3 text-gray-red transition-all md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0">Animation</Link>
+            <li className="p-2" onClick={() => isOpenNavbar && setIsOpenNavbar(false)}>
+              {/* NavLink will be add .action class when clicked */}
+              <NavLink exact="true" to="/animation" className="block py-0 pr-4 pl-3 text-gray-red transition-all md:bg-transparent md:hover:text-white md:p-0">Animation</NavLink>
             </li>
-            <li className="p-2">
-              <Link to="/recommendation" className="block py-0 pr-4 pl-3 text-gray-red transition-all md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0">Recomendation</Link>
+            <li className="p-2" onClick={() => isOpenNavbar && setIsOpenNavbar(false)}>
+              {/* NavLink will be add .action class when clicked */}
+              <NavLink exact="true" to="/recommendation" className="block py-0 pr-4 pl-3 text-gray-red transition-all md:bg-transparent md:hover:text-white md:p-0">Recommendation</NavLink>
             </li>
           </ul>
         </div>
