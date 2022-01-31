@@ -14,7 +14,7 @@ const ContinueWatching = () => {
       </div>
       <div className="flex w-full flex-wrap pt-4 space-y-4 md:space-y-0 md:space-x-6 md:flex-nowrap">
         <div className="w-full md:w-1/2">
-          <div className="flex w-full relative h-48 overflow-hidden rounded-[15px] md:h-52">
+          <div className="flex w-full relative h-48 overflow-hidden rounded-[15px] md:h-64">
             <img className="w-full h-auto object-cover object-center" src="https://cdn2.geeq.id/media/post/medium/5863-ada-hulkbuster-di-poster-baru-avengers-end-game-begini-penampakannya.jpg" alt="" />
             <div className="flex flex-nowrap flex-row px-7 absolute w-full bottom-0 left-0 items-center bg-glass h-14 md:h-11 lg:h-16">
               <div className="bg-red-500 absolute top-0 left-0" style={{ height: '3px', width: '40%' }}></div>
@@ -38,7 +38,7 @@ const ContinueWatching = () => {
           </div>
         </div>
         <div className="w-full md:w-1/2">
-          <div className="flex w-full relative h-48 overflow-hidden rounded-[15px] md:h-52">
+          <div className="flex w-full relative h-48 overflow-hidden rounded-[15px] md:h-64">
             <img className="w-full h-auto object-cover object-center" src="https://i.pinimg.com/originals/f2/73/18/f273186ebd6cf32a8c8cd9ccc796679e.jpg" alt="" />
             <div className="flex flex-nowrap flex-row px-7 absolute w-full bottom-0 left-0 items-center bg-glass h-14 md:h-11 lg:h-16">
               <div className="bg-red-500 absolute top-0 left-0" style={{ height: '3px', width: '70%' }}></div>
