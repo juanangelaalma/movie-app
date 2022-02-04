@@ -1,11 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import { Link, Navigate, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import Profile from "./Profile";
 
 const Navbar = () => {
   const [isOpenNavbar, setIsOpenNavbar] = useState(false)
-  const [isOpenDropdownUser, setIsOpenDropdownUser] = useState(false)
-  const [active, setActive] = useState('home')
 
   return (
     <nav className="bg-black fixed top-0 left-0 z-10 w-full border-gray-200 px-2 sm:px-4 py-6">
@@ -18,33 +17,7 @@ const Navbar = () => {
         <Link to="/" className="flex">
           <h1 className="text-white text-3xl font-serif font-bold">MOVIES</h1>
         </Link>
-        <div className="flex relative items-center md:order-2">
-          <button onClick={() => setIsOpenDropdownUser(!isOpenDropdownUser)} type="button" className="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-red">
-            <span className="sr-only">Open user menu</span>
-            <img className="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg" alt="" />
-          </button>
-          {/* Dropdown Menu */}
-          <div className={`${isOpenDropdownUser ? '' : 'hidden '}absolute top-8 right-0 z-50 border border-gray-red shadow-gray-red shadow-xs my-4 text-base list-none bg-black rounded divide-y divide-gray-red`} id="dropdown">
-            <div className="py-3 px-4">
-              <span className="block text-sm text-white">Bonnie Green</span>
-              <span className="block text-sm font-medium text-gray-red truncate">name@movies.com</span>
-            </div>
-            <ul className="py-1">
-              <li>
-                <NavLink to="/user/dashboard" className="block py-2 px-4 text-sm text-gray-red hover:text-white">Dashboard</NavLink>
-              </li>
-              <li>
-                <Link to="/user/settings" className="block py-2 px-4 text-sm text-gray-red hover:text-white">Settings</Link>
-              </li>
-              <li>
-                <Link to="/user/earnings" className="block py-2 px-4 text-sm text-gray-red hover:text-white">Earnings</Link>
-              </li>
-              <li>
-                <Link to="/user/sign-out" className="block py-2 px-4 text-sm text-gray-red hover:text-white">Sign out</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <Profile />
         {/* Navbar Links */}
         <div className={`${ isOpenNavbar ? 'flex ' : 'hidden ' }justify-between w-80 h-screen md:h-auto md:flex md:w-auto md:order-1`} id="mobile-menu-2">
           <ul className="flex flex-col w-full mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium">
