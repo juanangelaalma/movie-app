@@ -1,1 +1,3 @@
 export const SET_POPULAR_MOVIES = "SET_POPULAR_MOVIES"
+
+export const SET_GENRES = "SET_GENRES"

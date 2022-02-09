@@ -18,12 +18,10 @@ const PopularMovies = () => {
   }
 
   useEffect(() => {
-    if(isEmptyObject(popularMovies)) {
+    if(popularMovies.length === 0) {
       getPopularMovies(setPopular)
     }
   }, [])
-
-  console.log(popularMovies)
 
   return (
     <div className="flex flex-col md:pr-0">
@@ -32,7 +30,7 @@ const PopularMovies = () => {
         <a className="text-gray-red hover:text-white text-light transition-all md:mr-6" href="#">More movies</a>
       </div>
       <div className="whitespace-nowrap pb-0 md:flex md:overflow-visible md:flex-wrap space-x-2 md:space-x-0 md:whitespace-pre-wrap w-full text-white max-h-25 overflow-x-scroll">
-        { !isEmptyObject(popularMovies) && popularMovies.map((movie) => (
+        { !(popularMovies.length === 0) && popularMovies.map((movie) => (
           <div key={movie.id} className="w-40 h-52 md:w-2/4 md:h-40 lg:h-64 md:mb-6 inline-block md:flex md:items-center overflow-hidden">
             <CardMovie poster={movie.image_url} rating={movie.rating} title={movie.title} dateRelease={movie.release} />
           </div>

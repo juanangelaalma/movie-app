@@ -1,8 +1,8 @@
 import { createStore } from "redux"
-import popularMovieReducer from "./reducers/popularMovies"
+import rootReducer from "./reducers";
 
 const store = createStore(
-    popularMovieReducer, /* preloadedState, */
+  rootReducer, /* preloadedState, */
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
