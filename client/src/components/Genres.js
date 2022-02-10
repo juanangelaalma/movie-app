@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { setGenres } from "../actions/genres";
 import getGenres from "../services/getGenres";
+import Loader from "./Loader";
 
 const colors = [
   "bg-orange hover:bg-orange-hover",
@@ -16,36 +17,46 @@ const colors = [
 const Genres = () => {
   const genres = useSelector(state => state.genres)
   const dispatch = useDispatch()
+  const [isLoading, setIsLoading] = useState(true)
 
   let count = 0
   const colorLength = colors.length
 
   const setGenresGlobal = (data) => {
     dispatch(setGenres(data))
+    setIsLoading(false)
   }
 
   useEffect(() => {
     if(genres.length === 0){
       getGenres(setGenresGlobal)
+    }else {
+      setIsLoading(false)
     }
   }, [])
-
-  console.log(genres)
 
   return (
     <div className="flex w-full flex-wrap">
       <h1 className="text-white text-lg font-bold">Genres</h1>
       <div className="whitespace-nowrap overflow-visible md:whitespace-pre-wrap md:overflow-visible space-x-3 md:space-x-0 md:flex md:flex-wrap w-full pt-4 overflow-x-scroll">
-        { !(genres.length === 0) && genres.map((genre, key) => {
-          count++
-          return (
-            <div key={key} className="md:pr-2 inline-block md:pb-2">
-              <span className={`${colors[(count-1)%colorLength]} px-2 py-1 rounded-xl inline-block`}>
-                <p className="text-white md:text-md font-md">{genre.genre}</p>
-              </span>
-            </div>
-          )
-        }) }
+        
+        { isLoading ? (
+          <div className="flex justify-center w-full">
+            <Loader />
+          </div>
+        ) : (
+          !(genres.length === 0) && genres.map((genre, key) => {
+            count++
+            return (
+              <div key={key} className="md:pr-2 inline-block md:pb-2">
+                <span className={`${colors[(count-1)%colorLength]} px-2 py-1 rounded-xl inline-block cursor-pointer`}>
+                  <p className="text-white md:text-md font-md">{genre.genre}</p>
+                </span>
+              </div>
+            )
+          })
+        ) }
+        
       </div>
     </div>
   );

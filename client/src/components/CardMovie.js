@@ -2,7 +2,7 @@ import React from "react";
 
 const CardMovie = ({ poster, rating, title, dateRelease }) => {
   return (
-    <div className="rounded-[15px] relative overflow-hidden h-full w-full md:mr-6">
+    <div className="rounded-[15px] relative overflow-hidden h-full w-full md:mr-6 cursor-pointer">
         <img
           src={poster}
           className="h-full w-full object-cover object-center"
