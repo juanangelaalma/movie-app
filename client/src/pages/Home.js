@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Header, PopularMovies, Genres, BestArtists } from "../components";
+import { Header, PopularMovies, Genres, BestArtists } from "../components";
 
 const Home = () => {
   return (
@@ -21,6 +21,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    
   );
 };
 

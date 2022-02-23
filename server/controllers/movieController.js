@@ -54,4 +54,46 @@ const getMovieByPopularity = async (req, res) => {
   }
 };
 
-module.exports = { getMovieByPopularity };
+
+const getMovieByContentRating = async (req, res) => {
+  try {
+    const options = {
+      method: "GET",
+      url: process.env.EXTERNAL_API + "/movie/byContentRating/R/",
+      params: {
+        page_size: 3
+      },
+      headers: defaultHeader
+    }
+
+    const response = await axios.request(options)
+    const { data } = response
+    const idMovies = data.results.map((el) => el.imdb_id); // get id only
+
+    const movies = await Promise.all(
+      idMovies.map(async (id) => {
+        try {
+          const res = await axios.request({
+            ...options,
+            url: `${process.env.EXTERNAL_API}/movie/id/${id}/`,
+          });
+          return res.data;
+        } catch (err) {
+          console.log(err);
+        }
+      })
+    );
+
+    const dataToReturn = movies.map(({ results }) => {
+      const data = { id: results.imdb_id, banner: results.banner, trailer: results.trailer }
+      return data
+    })
+
+    res.send(dataToReturn)
+  }catch(err) {
+    res.send(err.message)
+    console.log(err)
+  }
+}
+
+module.exports = { getMovieByPopularity, getMovieByContentRating };
