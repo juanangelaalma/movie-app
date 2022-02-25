@@ -1,24 +1,30 @@
-import React, { createRef, useState, useMemo } from "react";
+import React, { useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import getBanners from "../services/getBanners";
 import { useEffect } from "react";
 import VideoPlayer from "./VideoPlayer";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setBanners } from "../actions/banners";
 
 
 const Banner = () => {
-  const [banners, setBanners] = useState([])
   const [videoOpened, setVideoOpened] = useState("")
+  const banners = useSelector(state => state.banners)
+  const dispatch = useDispatch()
 
-  const getData = () => {
-    getBanners(setBanners)
-  }
+  const setBannerGlobal = (data) => {
+    dispatch(setBanners(data))
+  }  
 
   useEffect(() => {
-    getData()
+    getBanners(setBannerGlobal)
   }, [])
 
   const handleOpenVideoPlayer = (url) => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
     setVideoOpened(url)
   }
 
@@ -26,6 +32,7 @@ const Banner = () => {
     setVideoOpened("")
   }
 
+  console.log("banner global", banners)
   return (
     <div className="w-full h-40 md:h-60 bg-orange-600 overflow-hidden rounded-xl">
       { videoOpened !== "" && <VideoPlayer url={videoOpened} handleClose={handleClose} /> }
