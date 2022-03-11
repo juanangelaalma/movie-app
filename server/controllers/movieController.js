@@ -96,4 +96,24 @@ const getMovieByContentRating = async (req, res) => {
   }
 }
 
-module.exports = { getMovieByPopularity, getMovieByContentRating };
+const searchMovieByTitle = async (req, res) => {
+  if(!(req.body && req.body.title)) {
+    res.status(400)
+    res.send("bad request")
+  }
+  try{
+    const options = {
+      method: "GET",
+      url: process.env.EXTERNAL_API + `/titles/search/keyword/${req.body.title}`,
+      params: {
+        page_size: 3
+      },
+      headers: defaultHeader
+    }
+    res.send(options)
+  }catch(err) {
+    console.log(err)
+  }
+}
+
+module.exports = { getMovieByPopularity, getMovieByContentRating, searchMovieByTitle };
