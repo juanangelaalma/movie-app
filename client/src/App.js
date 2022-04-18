@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Explore, Home } from "./pages";
 import { Navbar } from "./components";
 import {
@@ -9,6 +9,9 @@ import {
 import Try from "./pages/Try";
 
 const App = () => {
+  useEffect(() => {
+    document.body.classList.add("bg-black")
+  })
   return (
     <Router>
       <Navbar />

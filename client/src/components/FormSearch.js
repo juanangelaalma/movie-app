@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FormSearch = () => {
+const FormSearch = ({ searchInput, setSearchInput }) => {
   return (
     <form className="w-80 md:w-[60%] flex">
         <div className="mb-6 w-full flex flex-wrap">
@@ -12,6 +12,8 @@ const FormSearch = () => {
               placeholder="Spiderman No Way Home"
               required
               autoComplete="off"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
             />
             <button type="submit" className="text-white transition-all active:ring-white active:ring-2 font-medium rounded-lg text-sm p-3 sm:w-auto text-center ">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
