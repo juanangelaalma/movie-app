@@ -97,20 +97,22 @@ const getMovieByContentRating = async (req, res) => {
 }
 
 const searchMovieByTitle = async (req, res) => {
-  if(!(req.body && req.body.title)) {
+  if(!(req.params.keyword)) {
     res.status(400)
     res.send("bad request")
   }
   try{
     const options = {
       method: "GET",
-      url: process.env.EXTERNAL_API + `/titles/search/keyword/${req.body.title}`,
-      params: {
-        page_size: 3
-      },
-      headers: defaultHeader
+      url: process.env.EXTERNAL_API + `/titles/search/title/${req.params.keyword}`,
+      params: {info: 'mini_info', limit: '10', page: '1', titleType: 'movie'},
+      headers: {
+        'X-RapidAPI-Host': 'data-imdb1.p.rapidapi.com',
+        'X-RapidAPI-Key': 'd41ae3a45emsh5e7923ee78fd456p186d3cjsn49cb0743812d'
+      }
     }
-    res.send(options)
+    const response = await axios.request(options)
+    res.send(response.data)
   }catch(err) {
     console.log(err)
   }

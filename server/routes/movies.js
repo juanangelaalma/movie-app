@@ -5,6 +5,6 @@ const { getMovieByPopularity, getMovieByContentRating, searchMovieByTitle } = re
 
 router.get("/popular/", getMovieByPopularity)
 router.get("/popular/contentRating", getMovieByContentRating)
-router.get("/search", searchMovieByTitle)
+router.get("/search/:keyword", searchMovieByTitle) // ganti menjadi menggunakan path
 
 module.exports = router
